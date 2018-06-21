@@ -1,12 +1,3 @@
-struct Option{T<:Number}
-    s::T
-    k::T
-    r::T
-    σ::T
-    t::T
-    call_or_put::String
-end
-
 function bs(O::Option)
     d1 = (log(O.s / O.k) + (O.r + O.σ * O.σ / 2) * O.t) / (O.σ * √O.t)
     d2 = d1 - O.σ * √O.t
@@ -30,7 +21,7 @@ function CND(x::Float64)
     CND = 1 - 1 / sqrt(2 * π) * exp(-l^2 / 2) * (a1 * k + a2 * k^2 + a3 * k^3 + a4 * k^4 + a5 * k^5)
 
     if x < 0
-        return 1-CND
+        return 1 - CND
     end
     
     return CND

@@ -9,14 +9,19 @@ Pkg.clone("https://github.com/brilhana/OptionsPricing.jl.git")
 
 ## Usage
 ```julia
+using OptionsPricing
+
+# Parameters are in order: underlying asset price, strike price, risk-free interest rate, volatility, time to expiration, Call or Put.
+o = Option(100.0, 90.0, 0.05, 0.3, 180/365, "Put")
+
 # Black-Scholes
-bs(Option(100.0, 90.0, 0.05, 0.3, 180/365, "Put"))
+bs(o)
 
 # Cox-Ross-Rubinstein
-crr(Option(100.0, 90.0, 0.05, 0.3, 180/365, "Put"))
+crr(o)
 
 # Least-Squares Monte Carlo
-mc(Option(100.0, 90.0, 0.05, 0.3, 180/365, "Put"))
+mc(o)
 ```
 
 ## TODO

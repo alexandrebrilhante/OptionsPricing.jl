@@ -1,12 +1,3 @@
-struct Option{T<:Number}
-    s::T
-    k::T
-    r::T
-    σ::T
-    t::T
-    call_or_put::String
-end
-
 function crr(O::Option; N::Int64 = 1000)
     Δt = O.t / N
     U = exp(O.σ * √Δt)

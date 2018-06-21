@@ -1,12 +1,3 @@
-struct Option{T<:Number}
-    s::T
-    k::T
-    r::T
-    σ::T
-    t::T
-    call_or_put::String
-end
-
 function mc(O::Option; N::Int64 = 1000, P::Int64 = 10000)
     Δt = O.t / N
     R = exp(O.r * Δt)
